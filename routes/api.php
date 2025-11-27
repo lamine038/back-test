@@ -16,3 +16,10 @@ Route::get('/user', [AuthController::class, 'user']);
 Route::middleware('auth:api')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
 });
+
+Route::get('/users', function() {
+    return [
+        ['id' => 1, 'name' => 'Lamine'],
+        ['id' => 2, 'name' => 'Kama']
+    ];
+});
